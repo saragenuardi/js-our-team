@@ -75,7 +75,7 @@ const team = [
 
     //BONUS 1
     //Richiama classe dall'html dichiarandola come variabile
-    let memberTeams = document.querySelector(".team-container"); //-->Crea un elemento DIV per HTML dando una classe CSS denominata "team-card" 
+    let memberTeams = document.querySelector(".team-container"); //-->Crea un elemento DIV per HTML dando una classe CSS denominata "team-container" 
     //BONUS 2
       // organizza i singoli membri in cards
     memberTeams.innerHTML += `
@@ -92,8 +92,59 @@ const team = [
         </div>
     </div>
     `
+}
 
-    
+//BONUS 3
+// Utilizzare gli input presenti nella pagina per permettere all'utente di aggiungere nuovi membri del team: cliccando sul pulsante "add" viene creato un nuovo oggetto, il quale viene inserito nell'array iniziale e viene stampata una nuova card con tutte le informazioni inserite dall'utente.
+
+
+    // Preleva il bottone dall'htmll tramite classe id
+    const btnAdd = document.getElementById("add-member");
+        // Aggiungi click al bottone add
+        btnAdd.addEventListener("click", function() {
+             // Prendere dati dentro l'input del form creando delle variabili
+             let addName = document.getElementById("name").value;
+             let addRole = document.getElementById("role").value;
+             let addPhoto = document.getElementById("image").value;
+
+             // Crea un oggetto che definisce i nuovi dati aggiunti nell'input form
+             const newMember = {
+                 name: addName,
+                 role: addRole,
+                 image: addPhoto
+            }
+
+             // Salva i dati nel nuovo oggetto creato
+             team.push(newMember);
+             console.log(team);
+
+             //Dopo aver inserito il nuovo membro, bisogna pulire il contenitore dei membri
+             newMember.innerHTML = "";
+
+             // Mostra la nuova card nella pagina
+
+                //Inserisci ciclo FOR per mostrare nella pagina il nuovo membro
+                addNewMemberTeam()
+                
+        }
+    );
+
+
+// // FUNCTIONS
+// function addNewMemberTeam() {
+//     elementFirst = [];
+//     for (let i = 0; i < elementFirst.length; i++) {
+//         const elementSecond = elementFirst[i];
+//         for (let key in elementSecond) {
+//             console.log(elementSecond[key]);
+//         }
+        
+//     }
+// }
+
+  
+
+  
+
 
  
-}
