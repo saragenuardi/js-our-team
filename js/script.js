@@ -72,16 +72,28 @@ const team = [
     // BONUS 3:
     // Utilizzare gli input presenti nella pagina per permettere all'utente di aggiungere nuovi membri del team: cliccando sul pulsante "add" viene creato un nuovo oggetto, il quale viene inserito nell'array iniziale e viene stampata una nuova card con tutte le informazioni inserite dall'utente.
 
-    
+
     //BONUS 1
     //Richiama classe dall'html dichiarandola come variabile
-    const memberTeams = document.querySelector(".team-container");
-    //Crea un elemento DIV per HTML dando una classe CSS denominata "team-card" 
-     memberTeams.innerHTML += `<div class="team-card">
-            <img src="img/${currentElement.image}">`; //--> Preleva dall'oggetto la chiave chiamata "image" e transforma il suo valore in un'immagine effettiva
-  }
+    let memberTeams = document.querySelector(".team-container"); //-->Crea un elemento DIV per HTML dando una classe CSS denominata "team-card" 
+    //BONUS 2
+      // organizza i singoli membri in cards
+    memberTeams.innerHTML += `
+    <div class="team-card">
+        <div class="card-image">
+            <img
+                src="img/${currentElement.image}"
+                alt="Wayne Barnett"
+            />
+        </div>
+        <div class="card-text">
+            <h3>${currentElement.name}</h3>
+            <p>${currentElement.role}</p>
+        </div>
+    </div>
+    `
 
+    
 
-  
-
-
+ 
+}
