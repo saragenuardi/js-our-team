@@ -52,4 +52,15 @@ const team = [
       for (let key in currentElement) {
           console.log(currentElement[key]);
       }
+
+      
+      //MILESTONE 2
+
+    //Crea una variabile e richiama l'id "teams" dell'HTML su JS
+    const memberTeams = document.getElementById("teams");
+    //Stampa le proprietà e le informazioni su HTML sottoforma di stringa
+    memberTeams.innerHTML +=  `<br> ${"Nome :"} ${currentElement.name} <br> ${"Ruolo :"} ${currentElement.role} <br> ${"Foto :"}  ${currentElement.image}`
+
   }
+
+  
