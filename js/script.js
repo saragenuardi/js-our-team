@@ -59,24 +59,29 @@ const team = [
     //Crea una variabile e richiama l'id "teams" dell'HTML su JS
     //const memberTeams = document.getElementById("teams");
     //Stampa le proprietà e le informazioni su HTML sottoforma di stringa
-    //memberTeams.innerHTML +=  `<br> ${"Nome :"} ${currentElement.name} <br> ${"Ruolo :"} ${currentElement.role} <br> ${"Foto :"}  ${currentElement.image}`;
+    //memberTeams.innerHTML +=  `
+    //<br> ${"Nome :"} ${currentElement.name}
+    // <br> ${"Ruolo :"} ${currentElement.role}
+    // <br> ${"Foto :"}  ${currentElement.image}`;
       
-    const memberTeams = document.querySelector(".team-container");
-    memberTeams.innerHTML += `
-        <img src="img/${currentElement.image}">
-        <br> ${"Nome :"} ${currentElement.name}
-        <br> ${"Ruolo :"} ${currentElement.role}
-        <br> ${"Foto :"}  ${currentElement.image}
-    `;
 
+    // BONUS 1:
+    // trasformare la stringa foto in una immagine effettiva
+    // BONUS 2:
+    // organizzare i singoli membri in card/schede
+    // BONUS 3:
+    // Utilizzare gli input presenti nella pagina per permettere all'utente di aggiungere nuovi membri del team: cliccando sul pulsante "add" viene creato un nuovo oggetto, il quale viene inserito nell'array iniziale e viene stampata una nuova card con tutte le informazioni inserite dall'utente.
+
+    
+    //BONUS 1
+    //Richiama classe dall'html dichiarandola come variabile
+    const memberTeams = document.querySelector(".team-container");
+    //Crea un elemento DIV per HTML dando una classe CSS denominata "team-card" 
+     memberTeams.innerHTML += `<div class="team-card">
+            <img src="img/${currentElement.image}">`; //--> Preleva dall'oggetto la chiave chiamata "image" e transforma il suo valore in un'immagine effettiva
   }
 
-// BONUS 1:
-// trasformare la stringa foto in una immagine effettiva
-// BONUS 2:
-// organizzare i singoli membri in card/schede
-// BONUS 3:
-// Utilizzare gli input presenti nella pagina per permettere all'utente di aggiungere nuovi membri del team: cliccando sul pulsante "add" viene creato un nuovo oggetto, il quale viene inserito nell'array iniziale e viene stampata una nuova card con tutte le informazioni inserite dall'utente.
+
   
 
 
