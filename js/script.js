@@ -46,21 +46,37 @@ const team = [
 
   //MILESTONE 1
 
-  //Stampo le proprietà su console
+  //Stampo le proprietà su console con FOR IN
   for (let i = 0; i < team.length; i++) {
       const currentElement = team[i];
       for (let key in currentElement) {
           console.log(currentElement[key]);
       }
 
-      
+
       //MILESTONE 2
 
     //Crea una variabile e richiama l'id "teams" dell'HTML su JS
-    const memberTeams = document.getElementById("teams");
+    //const memberTeams = document.getElementById("teams");
     //Stampa le proprietà e le informazioni su HTML sottoforma di stringa
-    memberTeams.innerHTML +=  `<br> ${"Nome :"} ${currentElement.name} <br> ${"Ruolo :"} ${currentElement.role} <br> ${"Foto :"}  ${currentElement.image}`
+    //memberTeams.innerHTML +=  `<br> ${"Nome :"} ${currentElement.name} <br> ${"Ruolo :"} ${currentElement.role} <br> ${"Foto :"}  ${currentElement.image}`;
+      
+    const memberTeams = document.querySelector(".team-container");
+    memberTeams.innerHTML += `
+        <img src="img/${currentElement.image}">
+        <br> ${"Nome :"} ${currentElement.name}
+        <br> ${"Ruolo :"} ${currentElement.role}
+        <br> ${"Foto :"}  ${currentElement.image}
+    `;
 
   }
 
+// BONUS 1:
+// trasformare la stringa foto in una immagine effettiva
+// BONUS 2:
+// organizzare i singoli membri in card/schede
+// BONUS 3:
+// Utilizzare gli input presenti nella pagina per permettere all'utente di aggiungere nuovi membri del team: cliccando sul pulsante "add" viene creato un nuovo oggetto, il quale viene inserito nell'array iniziale e viene stampata una nuova card con tutte le informazioni inserite dall'utente.
   
+
+
